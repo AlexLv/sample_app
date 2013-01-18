@@ -1,6 +1,8 @@
 SampleApp::Application.routes.draw do
  
-  get "users/new"
+  resources :users
+  
+  # get "users/new"
 
   root to: 'static_pages#home'
 
@@ -13,8 +15,6 @@ SampleApp::Application.routes.draw do
 
   resources :microposts
 
-
-  resources :users
 
 
   # The priority is based upon order of creation:
