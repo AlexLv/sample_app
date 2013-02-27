@@ -8,4 +8,12 @@ module UsersHelper
 		gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
 		image_tag(gravatar_url, alt: user.name, class: "gravatar")
 	end	
+
+	def current_user
+		@current_user ||= User.find_by_remember_token(cookies[:remember_token])
+	end
+
+	def current_user?(user)
+		user = current_user
+	end
 end
